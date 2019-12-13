@@ -15,11 +15,12 @@
 <body class="bg-light">
     <div class="container">
         <div class="row">
-            <div class="offset-md-4 col-md-4">
+            <div class="offset-md-3 col-md-6">
                 <div class="card mt-5 shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title mb-0" id="title"></h5>
                         <p class="card-text mb-0" id="text"></p>
+                        <p class="card-text mb-0" style="word-break: break-all"><small class="text-muted" id="parameter"></small></p>
                     </div>
                 </div>
 
@@ -46,9 +47,11 @@
         var noname = get()["noname"];
         var title = get()["title"];
         var text = get()["text"];
+        var parameter = '?secret=' + secret + '&noname=' + noname + '&title=' + title + '&text=' + text
 
         $('#title').html(title)
         $('#text').html(text)
+        $('#parameter').html(parameter)
 
         $.post('https://api.pushcut.io/' + secret + '/notifications/' + noname, {
             title: title,
