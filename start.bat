@@ -1,0 +1,1 @@
+http-server %~dp0 -c-1 -e -o
