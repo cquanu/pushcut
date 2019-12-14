@@ -45,10 +45,16 @@
                         <div class="form-group">
                             <label for="" class="form-label">Secret</label>
                             <input id="ask-secret" type="text" class="form-control text-danger">
+                            <small class="form-text text-muted">
+                                Pushcut Webhook Secret
+                            </small>
                         </div>
                         <div class="form-group">
                             <label for="" class="form-label">Notification Name</label>
                             <input id="ask-notification-name" type="text" class="form-control">
+                            <small class="form-text text-muted">
+                                Pushcut Notification Name
+                            </small>
                         </div>
                         <div class="form-group">
                             <label for="" class="form-label">Notification Title</label>
@@ -110,6 +116,17 @@
         $('#ask-notification-name').val(noname)
         $('#ask-title').val(title)
         $('#ask-text').val(text)
+
+        $("form").change(function() {
+            secret = $('#ask-secret').val()
+            noname = $('#ask-notification-name').val()
+            title = $('#ask-title').val()
+            text = $('#ask-text').val()
+        })
+
+        $(".btn-primary").click(function() {
+            window.location.replace('?secret=' + secret + '&noname=' + noname + '&title=' + title + '&text=' + text)
+        })
 
         /* %0D%0A */
 
