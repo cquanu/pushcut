@@ -1,2 +1,2 @@
 # pushcut-post
- Pushcut Web Post Request
+Convert URL query to POST request for https://www.pushcut.io/
